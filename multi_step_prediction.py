@@ -152,15 +152,15 @@ def plot_forecasts(series, forecasts, n_test):
 if __name__ == '__main__':
     # Load the data
     amazon = read_csv('data/AMZN_2006-01-01_to_2017-11-01.csv')
-    series = amazon['Close'][1000:1200]
+    series = amazon['Close'][800:1800]
 
     # configure
     n_lag = 1
     n_seq = 5
-    n_test = 5
-    n_epochs = 20
+    n_test = 20
+    n_epochs = 4
     n_batch = 1
-    n_neurons = 32
+    n_neurons = 8
 
     # prepare data
     scaler, train, test = prepare_data(series, n_test, n_lag, n_seq)
